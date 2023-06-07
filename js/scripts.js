@@ -16,3 +16,15 @@ Pizza.prototype.calculatePrice = function() {
   price += (3 * this.toppings.length);
   return price;
 }
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const size = document.querySelector("input[name='size']:checked").value;
+  const toppings = document.querySelectorAll("input[name='toppings']:checked");
+  const myPizza = new Pizza(toppings, size);
+  document.querySelector("p").innerText = `Price: $${myPizza.calculatePrice()}`;
+}
+
+window.addEventListener("load", function () {
+  this.document.querySelector("form").addEventListener("submit", handleFormSubmission);
+});
