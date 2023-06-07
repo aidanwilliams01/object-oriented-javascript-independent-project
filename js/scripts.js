@@ -17,6 +17,10 @@ Pizza.prototype.calculatePrice = function() {
   return price;
 }
 
+function Order(currentPrice) {
+  this.currentPrice = currentPrice;
+}
+
 function handleFormSubmission(event) {
   event.preventDefault();
   const size = document.querySelector("input[name='size']:checked").value;
