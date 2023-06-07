@@ -21,6 +21,12 @@ function Order(currentPrice) {
   this.currentPrice = currentPrice;
 }
 
+
+Order.prototype.calculatePrice = function(pizzaPrice) {
+  this.currentPrice += pizzaPrice;
+  return this.currentPrice;
+}
+
 function handleFormSubmission(event) {
   event.preventDefault();
   const size = document.querySelector("input[name='size']:checked").value;
@@ -30,5 +36,6 @@ function handleFormSubmission(event) {
 }
 
 window.addEventListener("load", function () {
+  const myOrder = Order(0);
   this.document.querySelector("form").addEventListener("submit", handleFormSubmission);
 });

@@ -15,3 +15,9 @@ Describe: Order()
 Test: "It should return an Order object with one property for the current price"
 Code: const myOrder = new Order(0);
 Expected Output: Order { currentPrice: 0 }
+
+Describe: Order.prototype.calculatePrice()
+
+Test: It should return the price of the order.
+Code: myOrder.calculatePrice(21)
+Expected output: 21
