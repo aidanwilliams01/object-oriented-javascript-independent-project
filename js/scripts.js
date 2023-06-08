@@ -35,7 +35,11 @@ function onPageLoad() {
     const toppings = document.querySelectorAll("input[name='toppings']:checked");
     const myPizza = new Pizza(toppings, size);
     const pizzaPrice = myPizza.calculatePrice();
-    document.querySelector("p").innerText = `Price: $${myOrder.calculatePrice(pizzaPrice)}`;
+    myPizza.toppings.forEach(topping => {
+      document.querySelector("p#pizzas").append(`${topping.value}, `);
+    });
+    document.querySelector("p#pizzas").append(`${myPizza.size}, $${pizzaPrice}`);
+    document.querySelector("p#price").innerText = `Price: $${myOrder.calculatePrice(pizzaPrice)}`;
   }
   form.addEventListener("submit", formSubmission);
 }
