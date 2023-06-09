@@ -10,6 +10,10 @@ Test: It should return the price of a given pizza object.
 Code: myPizza.calculatePrice()
 Expected output: 21
 
+Test: It should return the price of a given pizza object using an updated price formula.
+Code: myPizza.calculatePrice()
+Expected output: 19
+
 Describe: Order()
 
 Test: "It should return an Order object with one property for the current price"

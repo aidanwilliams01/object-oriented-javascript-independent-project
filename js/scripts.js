@@ -6,14 +6,17 @@ function Pizza(toppings, size) {
 Pizza.prototype.calculatePrice = function() {
   if (this.size === "large") {
     price = 20;
+    sizeMultiplier = 3;
   }
   else if (this.size === "medium") {
     price = 15;
+    sizeMultiplier = 2;
   }
   else {
     price = 10;
+    sizeMultiplier = 1;
   }
-  price += (3 * this.toppings.length);
+  price += (sizeMultiplier * this.toppings.length);
   return price;
 }
 
