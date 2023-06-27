@@ -4,6 +4,8 @@ function Pizza(toppings, size) {
 }
 
 Pizza.prototype.calculatePrice = function() {
+  let price = 0;
+  let sizeMultiplier = 0;
   if (this.size === "large") {
     price = 20;
     sizeMultiplier = 3;
